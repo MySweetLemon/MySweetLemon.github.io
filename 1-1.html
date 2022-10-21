@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Welcome to the Web front end</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+        .fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		.clearfix:after{
+			content: "";
+			display: block;
+			clear: both;
+			}
+		.nav{
+			height: 88px;
+			border-bottom: 2px solid #e8e8e8;
+			border-top: 100px;
+			background-color: #fdf5de;
+		}
+		.nav .logo{
+			margin: 0 0 0 80px;
+			height: 88px;
+			line-height: 88px;
+		}
+		.nav .main{
+			margin-left: 60px;
+			height: 88px;
+			line-height: 88px;
+		}
+		.nav .main a{
+			margin: 0 12px;
+		}
+		.nav .user{
+			margin: 0 16px 0 60px;
+			height: 88px;
+			line-height: 88px;
+		}
+		.nav .user a{
+			font-size: 14px;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 18px;
+			margin: 22px 0;
+		}
+		.nav .user a:nth-of-type(1){
+			background-color: #28292a;
+			margin-right: 20px;
+			color: #ffffff;
+		}
+    </style>
+</head>
+<body>
+    <div class="nav clearfix">
+        <div class="logo f1">
+            欢迎进入
+        </div>
+        <div class="main f1">
+            <a href="1-1.html">首页</a>
+            <a href="1-2.html">Web作业</a>
+            <a href="">娱乐</a>
+            <a href="">学习资源</a>
+            <a href="">小游戏</a>
+            <a href="">音乐</a>
+        </div>
+        <div class="user fr">
+            <a href="" class="f1"> 联系我们</a>
+        </div>
+    </div>
+    <!-- <script>
+        document.body.style.height =window.innerHeight + 'px';
+        document.body.style.width =window.innerWidth + 'px';
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* 导航 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    width: 90%;
+    color: #681414;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #681414;
+}
+
+.logo h3 {
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.nav ul li a:hover {
+    color: rgb(11, 211, 41);
+}
+
+.nav ul .active a {
+    color: rgb(29, 217, 85);
+}

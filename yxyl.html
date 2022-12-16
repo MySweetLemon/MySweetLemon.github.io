@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏娱乐</title>
+    <link rel="stylesheet" type="text/css" href="css/yxyl.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/yxyl0.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <h3>柠檬不萌的个人网页</h3>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="index.html">首页</a>
+                </li>
+                <li class="active">
+                    <a href="yxyl.html">游戏娱乐</a>
+                </li>
+                <li>
+                    <a href="grxx.html">个人信息</a>
+                </li>
+                <li>
+                    <a href="grzy.html">个人作业</a>
+                </li>
+                <li>
+                    <a href="lxfs.html">联系方式</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="yxyl-box bottom">
+        <ul>
+            <li>
+                <a href="yxyl.html">
+                    <img src="img/ah.png">
+                    <span>丝滑翻书</span>
+                </a>
+            </li>
+            <li>
+                <a href="yxyl1.html">
+                    <img src="img/xx.png">
+                    <span>爱心代码</span>
+                </a>
+            </li>
+            <li>
+                <a href="yxyl2.html">
+                    <img src="img/zy.png">
+                    <span>待开发1</span>
+                </a>
+            </li>
+            <li>
+                <a href="yxyl1.html">
+                    <img src="img/lx.png">
+                    <span>待开发2</span>
+                </a>
+            </li>
+            <li>
+                <a href="yxyl1.html">
+                    <img src="img/lx.png">
+                    <span>待开发3</span>
+                </a>
+            </li>
+        </ul>
+        <div class="yxyl-text">
+            <div class="book1">
+                <div id="book">
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                    <div class="book-cover one-page"></div>
+                </div>
+                <div id="control">
+                    <button>&lt;</button>
+                    <button>&gt;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 总页数
+        const PAGECOUNT = 48
+        // 当前页面编号
+        let pageNo = 0
+
+        // 内容页
+        let pages = document.querySelectorAll('.book-page')
+        // 封面页
+        let cover = document.querySelectorAll('.book-cover')
+        // 按钮
+        let btn = document.querySelectorAll('#control button')
+        // 
+        let book = document.querySelector('#book')
+        // 所有页
+        let allPages = document.querySelectorAll('.one-page')
+
+        function init() {
+            // 初始化内容页的图片
+            for (let index = 0; index < pages.length; index++) {
+                // pages[index].style.a = "src('" + [index + 1] + ".html')"
+                pages[index].style.backgroundImage = "url('" + [index + 1] + ".jpg')"
+                pages[index].style.zIndex = PAGECOUNT - index - 1
+            }
+            cover[0].style.zIndex = PAGECOUNT
+            cover[1].style.zIndex = 1
+
+            // 默认页面为封面，左按钮无效
+            btn[0].style.backgroundColor = "rgba(110, 110, 110, 0.5)"
+            btn[0].style.color = "darkgray"
+            btn[0].disabled = true
+
+            // 左翻页
+            btn[0].onclick = function () {
+                pageNo--
+                // 如果当前是最后一页，并往前翻
+                if ((PAGECOUNT - 1) == pageNo) {
+                    allPages[pageNo].style.transform = 'rotateY(0deg)'
+                    //( 240px + 50px ) * 0.5
+                    book.style.transform = 'translateX(145px)'
+                    btn[1].style.backgroundColor = "rgba(63, 63, 63, 0.8)"
+                    btn[1].style.color = "white"
+                    btn[1].disabled = false
+                }
+                else {
+                    allPages[pageNo].style.transform = 'rotateY(0deg)'
+                }
+                allPages[pageNo].style.zIndex = PAGECOUNT - pageNo
+
+                if (0 == pageNo) {
+                    btn[0].style.backgroundColor = "rgba(110, 110, 110, 0.5)"
+                    btn[0].style.color = "darkgray"
+                    btn[0].disabled = true
+                    book.style.transform = 'translateX(0px)'
+                }
+            }
+
+            // 右翻页
+            btn[1].onclick = function () {
+                // 如果当前是第一页，并往后翻
+                if (0 == pageNo) {
+                    allPages[pageNo].style.transform = 'rotateY(-180deg)'
+                    //( 240px + 50px ) * 0.5
+                    book.style.transform = 'translateX(145px)'
+                    btn[0].style.backgroundColor = "rgba(63, 63, 63, 0.8)"
+                    btn[0].style.color = "white"
+                    btn[0].disabled = false
+                }
+                else {
+                    allPages[pageNo].style.transform = 'rotateY(-180deg)'
+                }
+
+                allPages[pageNo].style.zIndex = 1000 + pageNo
+                pageNo++
+
+                if (PAGECOUNT == pageNo) {
+                    btn[1].style.backgroundColor = "rgba(110, 110, 110, 0.5)"
+                    btn[1].style.color = "darkgray"
+                    btn[1].disabled = true
+                    book.style.transform = 'translateX(300px)'
+                }
+            }
+        }
+        init()
+    </script>
+</body>
+
+</html>

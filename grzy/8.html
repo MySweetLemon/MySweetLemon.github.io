@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八次作业</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 2em;
+        }
+
+        span {
+            color: #681414;
+            font-weight: bold;
+        }
+
+        span #second {
+            color: red;
+        }
+
+        span #ms {
+            color: gray;
+        }
+    </style>
+    <script type="text /javascript">
+    var now = new Date();
+    </script>
+</head>
+
+<body>
+    <h1>第八次作业</h1>
+    <h2>显示当前时间</h2>
+    <p>
+        <span id="year"></span>年
+        <span id="month"></span>月
+        <span id="date"></span>日
+    </p>
+    <p>
+        <span id="hour"></span>时
+        <span id="minute"></span>分
+        <span id="second"></span>秒
+    </p>
+    <p>
+        <span id="ms"></span>毫秒
+    </p>
+    <script type="text/javascript">
+        setInterval(showtime, 1000 / 50);
+
+        function showtime() {
+
+            var t = new Date();
+
+            document.querySelector('span#year').textContent = t.getFullYear();
+
+            document.querySelector('span#month').textContent = t.getMonth() + 1;
+
+            document.querySelector('span#date').textContent = t.getDate();
+
+            document.querySelector('span#hour').textContent = t.getHours();
+
+            document.querySelector('span#minute').textContent = t.getMinutes();
+
+            document.querySelector('span#second').textContent = t.getSeconds();
+
+            document.querySelector('span#ms').textContent = t.getMilliseconds();
+
+        }
+    </script>
+</body>
+
+</html>

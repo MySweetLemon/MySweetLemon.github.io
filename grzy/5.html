@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五次作业</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+    <script>
+        //实现计算和输出
+        var price = 60;
+        var discount = 0.4;
+        var total = price - (price * discount);
+        var output = "价格为：" + price + "元。" + "折扣为：" + discount + "元。总共支出：" + total + "元。";
+        alert(output);
+        //实现循环计算和输出
+        var count = 20;
+        total = 0;
+        while (count > 0) {
+            total += count
+            count = count - 1;
+        }
+        output = "20以内的整数之和是：" + total + "!";
+        alert(output);
+        //实现判断计算和输出
+        var person = { name: "caolinmin", isMale: false, height: 175 };
+
+        output = "姓名：" + person.name + "\n" + "身高:" + person.height + "cm.";
+
+        if (person.isMale) {
+            output += "\n" + "性别：男";
+        } else {
+            output += "\n" + "性别：女";
+        }
+        alert(output);
+
+    </script>
+</head>
+
+<body>
+    <h1>第五次作业</h1>
+    <h2>每次弹窗实现一段JavaScript代码，共实现三次！</h2>
+</body>
+
+</html>

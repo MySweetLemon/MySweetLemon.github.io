@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十二次作业</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        div {
+            position: absolute;
+        }
+
+        div img {
+            width: 150px;
+        }
+
+        div p {
+            position: absolute;
+            font-size: 1em;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            right: 5%;
+            bottom: 5%;
+            margin: 0;
+            padding: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        var fbs = [];
+        const divWidth = 160;
+        for (var i = 0; i < 10; i++) {
+            var man = document.createElement("img");
+            man.src = "img/1.jpg";
+            man.alt = "FBS第" + (i + 1) + "位";
+            var kk = document.createElement("div");
+            kk.id = 'fbs-' + i;
+            var pp = document.createElement("p");
+            pp.textContent = man.alt;
+            kk.appendChild(man);
+            kk.appendChild(pp);
+            kk.style.left = divWidth * i + "px";
+            var divObj = { kk: kk, x: divWidth * i, id: kk.id };
+            fbs[i] = divObj;
+        } 
+    </script>
+</head>
+
+<body>
+    <h1>第十二次作业</h1>
+    <script type="text/javascript">
+        var dad = document.body;
+        for (var i = 0; i < fbs.length; i++) {
+            dad.appendChild(fbs[i].kk);
+        } //异步执行代码，利用经典的getElementById，获取页面上的DOM元素，实现对元素的坐标修改
+        setInterval(function () {
+            for (var j = 0; j < fbs.length; j++) {
+                var x = fbs[j].x;
+                if (x < -divWidth) {
+                    x = x + divWidth * 10;
+                } else {
+                    x -= 2;
+                }
+                fbs[j].x = x;
+                //console.log ( fbs [ j ] .name ) ; 
+                document.getElementById(fbs[j].id).style.left = x + "px";
+            }
+        }, 50); 
+    </script>
+</body>
+
+</html>
